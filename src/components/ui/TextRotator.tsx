@@ -21,8 +21,6 @@ const TextRotator = ({
     words,
     className = "",
     interval = 3000,
-    textGradient = false,
-    letterAnimation = true,
     color = "currentColor"
 }: TextRotatorProps) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,7 +50,7 @@ const TextRotator = ({
             transition: {
                 delay: i * 0.02,
                 duration: 0.4,
-                ease: [0.22, 1, 0.36, 1]
+                ease: [0.22, 1, 0.36, 1] as any
             }
         }),
         exit: (i: number) => ({
@@ -96,7 +94,7 @@ const TextRotator = ({
                                     <motion.span
                                         key={`${currentIndex}-${tick}-${segmentIndex}-${i}`}
                                         custom={currentIndexValue}
-                                        variants={letterVariants}
+                                        variants={letterVariants as any}
                                         style={{
                                             display: 'inline-block',
                                             whiteSpace: 'pre',

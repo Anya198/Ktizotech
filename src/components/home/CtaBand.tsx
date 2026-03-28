@@ -1,5 +1,4 @@
 import RevealWrapper from '@/components/ui/RevealWrapper'
-import Button from '@/components/ui/Button'
 import StarButton from '@/components/ui/StarButton'
 
 export default function CtaBand() {

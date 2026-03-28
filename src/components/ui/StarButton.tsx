@@ -31,7 +31,7 @@ export function StarButton({
   className,
   onClick,
   ...props
-}: StarButtonProps) {
+}: StarButtonProps & React.HTMLAttributes<HTMLElement>) {
   const pathRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
 
   useEffect(() => {
@@ -103,7 +103,7 @@ export function StarButton({
           style={styles}
           onClick={onClick}
           ref={pathRef as React.RefObject<HTMLAnchorElement>}
-          {...(props as any)}
+          {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
           {content}
         </a>
@@ -116,7 +116,7 @@ export function StarButton({
         style={styles}
         onClick={onClick}
         ref={pathRef as React.RefObject<HTMLAnchorElement>}
-        {...(props as any)}
+        {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
         {content}
       </Link>
@@ -126,11 +126,11 @@ export function StarButton({
   return (
     <button
       style={styles}
-      // @ts-ignore
+      // @ts-expect-error - ref type mismatch
       ref={pathRef}
       className={sharedClasses}
       onClick={onClick}
-      {...props}
+      {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
     >
       {content}
     </button>

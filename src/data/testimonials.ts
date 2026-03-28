@@ -1,4 +1,6 @@
-export const testimonials = [
+import { Testimonial } from '@/components/ui/TestimonialStack';
+
+export const testimonials: Testimonial[] = [
   {
     id: 1,
     quote: "KtizoTech has completely transformed how we operate at GEM Nation. Before working with them, our team spent countless hours manually sending messages, organizing workflows, and following up on production. Through their AI automation systems, we now have a streamlined and highly efficient system that fits seamlessly into our day to day activities without delay. A special thank you to KtizoTech Team for his support and insight throughout the process.",

@@ -21,7 +21,7 @@ export default function Testimonials() {
         </RevealWrapper>
 
         <RevealWrapper delay={0.2} className="mt-32">
-          <TestimonialStack testimonials={testimonials as any} />
+          <TestimonialStack testimonials={testimonials} />
         </RevealWrapper>
       </div>
     </section>

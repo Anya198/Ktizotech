@@ -2,7 +2,6 @@
 
 import React, { useState, useRef, useEffect, useCallback, CSSProperties } from 'react';
 import { cn } from '@/lib/utils';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, Zap, CheckCircle2, Star } from 'lucide-react';
 
 const ICON_MAP = {
@@ -160,7 +159,7 @@ export const TestimonialStack = ({ testimonials, visibleBehind = 2 }: Testimonia
                 </div>
                 
                 <div className="relative mb-8">
-                    <span className="absolute -top-4 -left-2 text-blue/10 text-6xl font-serif">"</span>
+                    <span className="absolute -top-4 -left-2 text-blue/10 text-6xl font-serif">&quot;</span>
                     <blockquote className="text-text2 leading-relaxed text-lg relative z-10 italic">
                         {testimonial.quote}
                     </blockquote>
