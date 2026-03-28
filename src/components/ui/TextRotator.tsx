@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, Variants } from 'framer-motion'
 import { clsx, type ClassValue } from "clsx"
 
 export function cn(...inputs: ClassValue[]) {
@@ -35,7 +35,7 @@ const TextRotator = ({
         return () => clearInterval(timer);
     }, [words.length, interval]);
 
-    const letterVariants = {
+    const letterVariants: Variants = {
         hidden: {
             opacity: 0,
             y: 20,
@@ -50,7 +50,7 @@ const TextRotator = ({
             transition: {
                 delay: i * 0.02,
                 duration: 0.4,
-                ease: [0.22, 1, 0.36, 1] as any
+                ease: [0.22, 1, 0.36, 1]
             }
         }),
         exit: (i: number) => ({
@@ -94,7 +94,7 @@ const TextRotator = ({
                                     <motion.span
                                         key={`${currentIndex}-${tick}-${segmentIndex}-${i}`}
                                         custom={currentIndexValue}
-                                        variants={letterVariants as any}
+                                        variants={letterVariants}
                                         style={{
                                             display: 'inline-block',
                                             whiteSpace: 'pre',
